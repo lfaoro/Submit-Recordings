@@ -39,7 +39,7 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 
 This will backup all your previous remote session recordings in the *Sessions-Backup* folder.
 
-> See the [instructive video](https://raw.githubusercontent.com/GFISoftware/Submit-Recordings/master/Submit%20Recordings.mp4) created by [Melvin Caruana]()
+> See the [instructive video](https://raw.githubusercontent.com/GFISoftware/Submit-Recordings/master/Submit%20Recordings.mp4) created by [Melvin Caruana](https://github.com/m-caruana)
 
 ## Communication
 - If you **need help**, [send me a tweet](<https://twitter.com/leonarth>)
