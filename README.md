@@ -17,7 +17,7 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 - [x] Seamless and automatic updates
 - [x] Email notifications
 
-## Features roadmap for version 2.0
+## Features roadmap for v2.0
 
 - [ ] Automatic detection and upload of new Sessions
 - [ ] Automatic case notes update
@@ -37,11 +37,10 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 ## Credits
 > Submit-Recordings is owned by GFI and maintained by [Leonardo Faoro](http://cv.lfaoro.com).
 
-> We all stand on the shoulders of giants across many open source communities. We’d like to thank the communities and projects that established my inspiration.
+> We all stand on the shoulders of giants across many open source communities. I’d like to thank the communities and projects that established my inspiration.
 
 ## Security Disclosure
 If you believe you have identified a security vulnerability with Cast, you should report it as soon as possible via email to leonardo.faoro@gfi.com. Please do not post it to a public issue tracker.
 
 ## License
 Cast is released under the [MIT License](<LICENSE.md>)
-
