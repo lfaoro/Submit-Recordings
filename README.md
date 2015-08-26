@@ -34,7 +34,9 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 - Run the *Submit Recordings.lnk* file
 
 > NOTE: The first time you run *Submit-Recordings* instead of the case number insert the parameter *BACKUP*
+
 `Please enter your case number i.e. GFI-XXXX-XXXX: BACKUP`
+
 This will backup all your previous remote session recordings in the *Sessions-Backup* folder.
 
 ## Communication
