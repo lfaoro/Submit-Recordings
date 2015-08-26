@@ -16,6 +16,7 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 - [x] Backup functionality
 - [x] Seamless and automatic updates
 - [x] Email notifications
+- [x] PowerShell compatibility check
 
 ## Features roadmap for v2.0
 
@@ -31,6 +32,10 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 - Download the *Submit Recordings.zip* from the [latest GitHub release](https://github.com/GFISoftware/Submit-Recordings/releases)
 - Unzip *Submit Recordings.zip*
 - Run the *Submit Recordings.lnk* file
+
+> NOTE: The first time you run *Submit-Recordings* instead of the case number insert the parameter *BACKUP*
+`Please enter your case number i.e. GFI-XXXX-XXXX: BACKUP`
+This will backup all your previous remote session recordings in the *Sessions-Backup* folder.
 
 ## Communication
 - If you **need help**, [send me a tweet](<https://twitter.com/leonarth>)
