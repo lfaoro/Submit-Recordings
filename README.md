@@ -38,5 +38,5 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 If you believe you have identified a security vulnerability with Submit Recordings, you should report it as soon as possible via email to leonardo.faoro@gfi.com. Please do not post it to a public issue tracker.
 
 ## License
-Cast is released under the [MIT License](<LICENSE.md>)
+Submit Recordings is released under the [MIT License](<LICENSE.md>)
 
