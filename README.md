@@ -27,6 +27,11 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 - Windows OS
 - PowerShell v3+
 
+## Installation
+- Download the *Submit Recordings.zip* from the [latest GitHub release](https://github.com/GFISoftware/Submit-Recordings/releases)
+- Unzip *Submit Recordings.zip*
+- Run the *Submit Recordings.lnk* file
+
 ## Communication
 - If you **need help**, [send me a tweet](<https://twitter.com/leonarth>)
 - If you'd like to **ask a general question**, [send me a tweet](<https://twitter.com/leonarth>)
