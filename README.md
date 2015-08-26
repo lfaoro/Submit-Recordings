@@ -32,7 +32,7 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 - If you'd like to **ask a general question**, [send me a tweet](<https://twitter.com/leonarth>)
 - If you **found a bug**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
 - If you **have a feature request**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
-- If you'd **like to contribute**, look for TODO: statements in the source files and/or send a Pull Request.
+- If you'd **like to contribute**, look for #TODO statements in the source files and send a Pull Request.
 
 ## Credits
 > Submit-Recordings is owned by GFI and maintained by [Leonardo Faoro](http://cv.lfaoro.com).
@@ -44,3 +44,4 @@ If you believe you have identified a security vulnerability with Cast, you shoul
 
 ## License
 Cast is released under the [MIT License](<LICENSE.md>)
+
