@@ -1,4 +1,26 @@
-﻿<#
+﻿# The MIT License (MIT)
+#
+# Copyright (c) 2015 - Leonardo Faoro
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+<#
 .SYNOPSIS
     Designed to automatically upload .tvs files in a folder structure automatically
     generated based on the case number supplied by the GFI Support CRM.
@@ -59,7 +81,6 @@ $shareTVRecordings = "\\gfi.com\dfs\company data\support\support_ts\RS Recording
 
 do {
     $caseNumber = Read-Host "Please enter your case number i.e. GFI-XXXX-XXXX"
-    #$confirmed = read-host "Your case number is $caseNumber, correct? yes/no"
 
         if (Test-Path -Path HKLM:\SOFTWARE\Wow6432Node\TeamViewer) {
             $registryPath = "HKLM:\SOFTWARE\Wow6432Node\TeamViewer\DefaultSettings"
@@ -163,7 +184,6 @@ Set-Location $dirTVRecordings
 Clear-Host
 
 # Check if any *.tvs files are present in the directory
-
 $files = Get-ChildItem -Filter *.tvs | Measure-Object
 if ($files.Count -le 0) {
     Write-Host -ForegroundColor Yellow "# There are no .tvs files in $dirTVRecordings"
@@ -180,7 +200,7 @@ if (-not (Test-Path -Path $casePath)) {
 }
 
 # Get-ChildItem -Recurse | %{Rename-Item $_ -Force -NewName ("$caseNumber-{0}.tvs" -f $increment++)}
-Get-ChildItem -Filter *.tvs <#-Recurse #> | Move-Item -Destination $casePath -Force -Verbose
+Get-ChildItem -Filter *.tvs | Move-Item -Destination $casePath -Force -Verbose
 write-host ""
 Write-Host -ForegroundColor Green "# Remote session files moved to shared folder, YAY!"
 write-host ""
@@ -200,10 +220,11 @@ Send-MailMessage -SmtpServer CAS02GUKEQS.gfi.com `
 
 The Remote Session Recordings for case: '$caseNumber' have been uploaded successfully to:
 $casePath
- 
-Thank you!"
 
-#Please, make sure you've updated the case notes with the correct location of the Remote Session Recordings.
+Thank you!
+
+Submit Recordings (v1.0)
+"
 
 write-host ""
 $casePath | clip.exe # thanks to Charlot for this idea
