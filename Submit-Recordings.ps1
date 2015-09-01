@@ -212,6 +212,10 @@ $sender = $searcher.FindOne().Properties.mail
 $senderName = $searcher.FindOne().Properties.name
 $senderDepartment = $searcher.FindOne().Properties.department
 $senderBranch = $searcher.FindOne().Properties.company
+$date = (get-date).ToString()
+
+$logPath = "\\gfi.com\dfs\company data\support\support_ts\Submit-Recordings\.log"
+echo "[$date] $senderName uploaded recordings to case: '$caseNumber'" >> $logPath
 
 Send-MailMessage -SmtpServer CAS02GUKEQS.gfi.com `
 -From $sender -To $sender,melvin.caruana@gfi.com,leonardo.faoro@gfi.com `
