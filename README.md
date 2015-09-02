@@ -46,12 +46,15 @@ created by [Melvin Caruana](https://github.com/m-caruana)
 ## Communication
 - If you **need help**, [send me a tweet](<https://twitter.com/leonarth>)
 - If you'd like to **ask a general question**, [send me a tweet](<https://twitter.com/leonarth>)
-- If you **found a bug**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
 - If you **have a feature request**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
+- If you **found a bug**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
 - If you'd **like to contribute**, look for #TODO statements in the source files and send a Pull Request.
 
 ## Security Disclosure
 If you believe you have identified a security vulnerability with Submit Recordings, you should report it as soon as possible via email to leonardo.faoro@gfi.com. Please do not post it to a public issue tracker.
+
+## Credits
+> Submit-Recordings has been developed with the help, support and ideas of the GFI Malta Technical Support Team
 
 ## License
 Submit Recordings is released under the [MIT License](<LICENSE>)
