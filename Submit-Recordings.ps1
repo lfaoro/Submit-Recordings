@@ -27,13 +27,12 @@
 .DESCRIPTION
     
 .NOTES
-    File Name      : TVRecordingsAutoUpload.ps1
+    File Name      : Submit-Recordings.ps1
     Author         : Leonardo Faoro (leonardo.faoro@gfi.com)
-    Prerequisite   : PowerShell V3 over Vista and upper.
+    Prerequisite   : PowerShell V3 over Vista and upper
     Copyright      : 2015 GFI Software Ltd. (www.gfi.com)
 .LINK
-    Script posted over:
-    https://github.com/GFISoftware/PowerShell
+    Repository: https://github.com/GFISoftware/Submit-Recordings
 #>
 
 #TODO: monitor RS folder - work in progress
@@ -74,12 +73,13 @@ if ($psVersion -lt 4) {
     
 }
 
+# Case number validation (thanks Melvin for this idea) 
 $validCaseNumber = '^\w{3}\W\d{6}\W\d{6}$'
 [String]$caseNumber
 [String]$registryPath
 $shareTVRecordings = "\\gfi.com\dfs\company data\support\support_ts\RS Recordings"
 
-do {
+do {   
     $caseNumber = Read-Host "Please enter your case number i.e. GFI-XXXX-XXXX"
 
         if (Test-Path -Path HKLM:\SOFTWARE\Wow6432Node\TeamViewer) {
@@ -129,7 +129,7 @@ do {
 $dirTVRecordings = (Get-ItemProperty -Path $registryPath).SessionRecorderDirectory
 Write-Host -ForegroundColor Green "Your remote sessions path is: $dirTVRecordings"
 
-
+# Extracting date from case number and formatting folder structure
 $monthsList = @{
     01 = "January";
     02 = "February";
@@ -145,10 +145,9 @@ $monthsList = @{
     12 = "December";
 }
 
-
 $increment = 0
 
-$caseNumber -match '(\d{2})(\d{2})'
+$caseNumber -match '(\d{2})(\d{2})' >>$null
 $caseYear = "20$($Matches[1])"
 [int]$tmp = $Matches[2]
 $caseMonth = "$($Matches[2])_" + $monthsList[$tmp]
@@ -181,8 +180,6 @@ if (-not (Test-Path -Path $dirTVRecordings)) {
 
 Set-Location $dirTVRecordings
 
-Clear-Host
-
 # Check if any *.tvs files are present in the directory
 $files = Get-ChildItem -Filter *.tvs | Measure-Object
 if ($files.Count -le 0) {
@@ -204,7 +201,6 @@ Get-ChildItem -Filter *.tvs | Move-Item -Destination $casePath -Force -Verbose
 write-host ""
 Write-Host -ForegroundColor Green "# Remote session files moved to shared folder, YAY!"
 write-host ""
-
 Write-Host -ForegroundColor Green "# Sending confirmation email..."
 
 $searcher = [adsisearcher]"(samaccountname=$env:USERNAME)"
@@ -212,8 +208,8 @@ $sender = $searcher.FindOne().Properties.mail
 $senderName = $searcher.FindOne().Properties.name
 $senderDepartment = $searcher.FindOne().Properties.department
 $senderBranch = $searcher.FindOne().Properties.company
-$date = (get-date).ToString()
 
+$date = (get-date).ToString()
 $logPath = "\\gfi.com\dfs\company data\support\support_ts\Submit-Recordings\.log"
 echo "[$date] $senderName uploaded recordings to case: '$caseNumber'" >> $logPath
 
@@ -229,9 +225,11 @@ Thank you!
 
 Submit Recordings (v1.0)
 "
-
 write-host ""
-$casePath | clip.exe # thanks to Charlot for this idea
+
+# Copying case path to the clipboard (thanks to Charlot for this idea)
+$casePath | clip.exe
+
 Write-Host -ForegroundColor Yellow "# Please, insert this path into your case notes: (already copied to clipboard)"
 Write-Host -ForegroundColor Cyan $casePath
 write-host ""
