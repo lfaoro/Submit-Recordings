@@ -226,7 +226,7 @@ $casePath
 
 Thank you!
 
-Submit Recordings (v1.0)
+Submit Recordings (v1.1)
 "
 write-host ""
 
