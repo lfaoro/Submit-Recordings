@@ -79,8 +79,10 @@ $validCaseNumber = '^\w{3}\W\d{6}\W\d{6}$'
 [String]$registryPath
 $shareTVRecordings = "\\gfi.com\dfs\company data\support\support_ts\RS Recordings"
 
-do {   
-    $caseNumber = Read-Host "Please enter your case number i.e. GFI-XXXX-XXXX"
+do {
+    Write-Host ""
+    $caseNumber = Read-Host "Please enter your case number e.g. GFI-XXXX-XXXX"
+    Write-Host ""
 
         if (Test-Path -Path HKLM:\SOFTWARE\Wow6432Node\TeamViewer) {
             $registryPath = "HKLM:\SOFTWARE\Wow6432Node\TeamViewer\DefaultSettings"
@@ -127,7 +129,8 @@ do {
 
 #Recordings Local Path
 $dirTVRecordings = (Get-ItemProperty -Path $registryPath).SessionRecorderDirectory
-Write-Host -ForegroundColor Green "Your remote sessions path is: $dirTVRecordings"
+Write-Host -ForegroundColor Green "# Your remote sessions path is: $dirTVRecordings"
+Write-Host ""
 
 # Extracting date from case number and formatting folder structure
 $monthsList = @{
