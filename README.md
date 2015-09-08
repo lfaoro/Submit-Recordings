@@ -7,20 +7,26 @@
 
 Submit Recordings is a tool created to improve the process of uploading the recordings of Remote Sessions performed by GFI Technical Support Agents.
 
-## Features available in v1.0
+## Features available in v1.2
 - [x] Auto-configured based on your TeamViewer settings
 - [x] Uploads data automatically
 - [x] Case number validation
 - [x] Creates correct folder structure based on case number logic
 - [x] Incremental uploads
 - [x] Email notifications on successful upload
-- [x] Backup functionality
 - [x] Seamless and automatic updates
 - [x] Internal PowerShell compatibility check
+- [x] Backup functionality (command: backup)
+- [x] Remote Session Retrieval functionality (command: open)
+- [x] Logging functionality: [Check the log](\\gfi.com\dfs\Company_Data\Support\Support_TS\Submit-Recordings\.log)
 
 ## Features roadmap for v2.0
 
 - [ ] Automatic detection and upload of new Sessions
+
+<br>
+> If we'll ever get access to SalesForce API
+
 - [ ] Automatic case notes update
 - [ ] Automatic case number detection based on the Salesforce page the Agent is currently vieweing
 
@@ -35,18 +41,18 @@ Submit Recordings is a tool created to improve the process of uploading the reco
 
 > NOTE: The first time you run *Submit-Recordings* instead of the case number insert the parameter *BACKUP*
 
-*e.g.: 
+*e.g.:
 `Please enter your case number i.e. GFI-XXXX-XXXX: backup`*
 
 This will backup all your previous remote session recordings in the *Sessions-Backup* folder.
 
-> See the [instructive video](https://raw.githubusercontent.com/GFISoftware/Submit-Recordings/master/Submit%20Recordings.mp4) 
+> See the [instructive video](https://raw.githubusercontent.com/GFISoftware/Submit-Recordings/master/Submit%20Recordings.mp4)
 created by [Melvin Caruana](https://github.com/m-caruana)
 
 ## Communication
 - If you **need help**, [send me a tweet](<https://twitter.com/leonarth>)
 - If you'd like to **ask a general question**, [send me a tweet](<https://twitter.com/leonarth>)
-- If you **have a feature request**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
+- If you **have a feature request**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>) :octocat:
 - If you **found a bug**, [open an issue](<https://github.com/GFISoftware/Submit-Recordings/issues>)
 - If you'd **like to contribute**, look for #TODO statements in the source files and send a Pull Request.
 
